@@ -1,43 +1,65 @@
 # Terraform AWS Assignment
 
-This project uses **Terraform** to set up a basic AWS infrastructure.
-
-##  What it does:
-
-- Creates a **VPC** (your own network)
-- Launches **EC2 instances** (virtual machines)
-- Attaches **EBS volumes** (extra storage for EC2)
-- Adds **Security Groups** (firewall rules)
-- Creates an **Application Load Balancer (ALB)** (to manage traffic)
-- Sets up **Auto Scaling** (automatically increases or decreases EC2s)
-- Shows output like public IPs and ALB DNS name
+This project is created using **Terraform** to automate AWS infrastructure setup.
 
 ---
 
-## Main Files:
+##  What I Understood in My Words:
+
+Using Terraform, I understood how we can **write code (in .tf files)** to create and manage AWS resources like:
+
+- EC2 (virtual servers)
+- EBS (storage)
+- VPC (network)
+- Security groups (firewall rules)
+- Load Balancer (to distribute traffic)
+- Auto Scaling (automatic server increase/decrease)
+
+Instead of doing everything manually from AWS Console, I learned how to do it all just by running **terraform commands**. That’s the real power of **Infrastructure as Code (IaC)**.
+
+---
+
+## What this Terraform Code Does:
+
+- Creates a **custom VPC** with subnets
+- Launches **EC2 instances**
+- Attaches **EBS volumes** to EC2
+- Sets up **Security Groups** (firewall rules)
+- Creates an **Application Load Balancer (ALB)**
+- Enables **Auto Scaling** (more EC2s on demand)
+- Displays useful outputs like **EC2 IP** and **ALB DNS name**
+
+---
+
+##  Terraform File Summary:
 
 | File               | Description                                 |
 |--------------------|---------------------------------------------|
-| `main.tf`          | Entry file that connects all resources      |
-| `vpc.tf`           | Creates the VPC and subnets                 |
+| `main.tf`          | Connects all Terraform modules              |
+| `vpc.tf`           | Creates VPC, subnets                        |
 | `ec2.tf`           | Launches EC2 instances                      |
 | `ebs.tf`           | Adds storage to EC2                         |
-| `security_groups.tf`| Firewall rules                             |
-| `alb.tf`           | Sets up the ALB                             |
-| `autoscale.tf`     | Enables Auto Scaling                        |
-| `variables.tf`     | Stores variable names                       |
-| `terraform.tfvars` | Stores actual values for the variables      |
-| `outputs.tf`       | Prints useful output like IP and URL        |
+| `security_groups.tf`| Sets firewall rules                       |
+| `alb.tf`           | Sets up Application Load Balancer          |
+| `autoscale.tf`     | Configures Auto Scaling                     |
+| `variables.tf`     | Defines variables used in code              |
+| `terraform.tfvars` | Actual values for those variables           |
+| `outputs.tf`       | Prints output like EC2 IP, ALB URL          |
 
 ---
 
-##  How to Use:
+##  Requirements:
 
-1. Open terminal in this folder  
-2. Run these commands one by one:
+- AWS account with access keys
+- Terraform installed on your system
+- AWS CLI configured (`aws configure`)
+
+---
+
+## How to Run:
 
 ```bash
-terraform init     # Sets up Terraform
-terraform plan     # Shows what will be created
-terraform apply    # Creates the AWS resources
-terraform destroy  # (Optional) Deletes everything
+terraform init     # Initialize Terraform
+terraform plan     # Preview what will be created
+terraform apply    # Create all AWS resources
+terraform destroy  # Delete all created resources (optional)
