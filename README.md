@@ -1,4 +1,4 @@
-# ✅ Terraform AWS Assignment
+# Terraform AWS Assignment
 
 This project uses **Terraform** to set up a basic AWS infrastructure.
 
@@ -14,7 +14,7 @@ This project uses **Terraform** to set up a basic AWS infrastructure.
 
 ---
 
-## 📁 Main Files:
+## Main Files:
 
 | File               | Description                                 |
 |--------------------|---------------------------------------------|
@@ -31,7 +31,7 @@ This project uses **Terraform** to set up a basic AWS infrastructure.
 
 ---
 
-## 🚀 How to Use:
+##  How to Use:
 
 1. Open terminal in this folder  
 2. Run these commands one by one:
